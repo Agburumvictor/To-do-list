@@ -4,23 +4,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <title> Todo List</title>
 </head>
 <body>
+    <div class="date">
+        <h2> <%= kindOfDay %> </h2>
 
-    <h1> <%= kindOfDay %> </h1>
+    </div>
+   
 
-    <ul>
-        <li>food</li>
-        <li>Busicuits</li>
-        <li>Still Thinking</li>
-        <li> <%= itemList %> </li>
-    </ul>
+    <div class="container">
 
-    <form action="/" method="post">
-        <input type="text" name="newItem">
-        <button type="submit" name="button">Add</button>
-    </form>
+        <div class="container_center">
+
+                <div class="child">
+
+                    
+                    <h1>Todo List</h1>
+
+                    <div class="list">
+
+                        <ul>
+                            <li> <input type="checkbox"> food</li>
+                            <li> <input type="checkbox"> Busicuits</li>
+                            <li> <input type="checkbox"> Still Thinking</li>
+                    
+                            <% for ( var i = 0; i < itemList.length; i++) { %>
+                                <li> <input type="checkbox"> <%= itemList[i] %> </li>
+                            <% } %>
+                        </ul>
+                    </div>
+                    <div class="send_btn">
+
+                        <form action="/" method="post">
+                            <input id="form_style" placeholder="What did you do today" type="text" name="newItem">
+                            <button type="submit" name="button">Add</button>
+                        </form>
+                </div>
+    </div>
+                </div>
+
+            </div>
+
+       
+    
+
+   
 
     
     
